@@ -1,0 +1,200 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Mario-Kart-DS.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Other Crap/MenuButtonsAndLabels.gd" type="Script" id=2]
+[ext_resource path="res://Screenshot_1.jpg" type="Texture" id=3]
+[ext_resource path="res://pickupCoin.wav" type="AudioStream" id=4]
+[ext_resource path="res://MenuMusic.mp3" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 96
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[node name="Menu" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="MenuButtonsAndLabels" type="Node2D" parent="."]
+position = Vector2( 125, -9 )
+script = ExtResource( 2 )
+
+[node name="Sandbox" type="Button" parent="MenuButtonsAndLabels"]
+margin_left = -611.0
+margin_top = -24.0
+margin_right = -320.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+action_mode = 0
+text = "sandbox"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Splitscreen" type="Button" parent="MenuButtonsAndLabels"]
+margin_left = -665.0
+margin_top = 65.0
+margin_right = -266.0
+margin_bottom = 123.0
+custom_fonts/font = SubResource( 3 )
+action_mode = 0
+text = "splitscreen"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HowToPlay" type="Button" parent="MenuButtonsAndLabels"]
+margin_left = -665.0
+margin_top = 152.0
+margin_right = -266.0
+margin_bottom = 210.0
+custom_fonts/font = SubResource( 3 )
+action_mode = 0
+text = "how to play"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="MenuButtonsAndLabels"]
+margin_left = -541.0
+margin_top = 238.0
+margin_right = -389.0
+margin_bottom = 296.0
+custom_fonts/font = SubResource( 3 )
+action_mode = 0
+text = "quit"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YouCatchMyDrift" type="Label" parent="MenuButtonsAndLabels"]
+margin_left = -981.0
+margin_top = -328.0
+margin_right = 50.0
+margin_bottom = -67.0
+custom_fonts/font = SubResource( 1 )
+text = "you catch my drift?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MadeForGameOff-2022" type="Label" parent="MenuButtonsAndLabels"]
+margin_left = -649.0
+margin_top = -132.0
+margin_right = -283.0
+margin_bottom = -99.0
+custom_fonts/font = SubResource( 2 )
+text = "made for game off - 2022"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadLabel" type="Label" parent="MenuButtonsAndLabels"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -523.5
+margin_top = 398.0
+margin_right = 273.5
+margin_bottom = 450.0
+custom_fonts/font = SubResource( 4 )
+text = "loading may take a moment"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SandBox" type="Timer" parent="MenuButtonsAndLabels"]
+wait_time = 0.5
+one_shot = true
+
+[node name="SplitScreen" type="Timer" parent="MenuButtonsAndLabels"]
+wait_time = 0.5
+one_shot = true
+
+[node name="Ding" type="AudioStreamPlayer" parent="MenuButtonsAndLabels"]
+stream = ExtResource( 4 )
+volume_db = -20.0
+
+[node name="HowtoplayLabel" type="Label" parent="MenuButtonsAndLabels"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -127.0
+margin_top = -104.0
+margin_right = 550.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 5 )
+text = "how to play
+
+1st player
+w - to accelerate
+a & d - to move left and right
+s - to move backwards
+
+2nd player
+up arrow - to accelerate
+right and left arrow - to move left and right
+down arrow - to move backwards
+
+sandbox mode only - press space to reset ai"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -30.0
+autoplay = true
+
+[connection signal="pressed" from="MenuButtonsAndLabels/Sandbox" to="MenuButtonsAndLabels" method="_on_Sandbox_pressed"]
+[connection signal="pressed" from="MenuButtonsAndLabels/Splitscreen" to="MenuButtonsAndLabels" method="_on_Splitscreen_pressed"]
+[connection signal="pressed" from="MenuButtonsAndLabels/HowToPlay" to="MenuButtonsAndLabels" method="_on_HowToPlay_pressed"]
+[connection signal="pressed" from="MenuButtonsAndLabels/Quit" to="MenuButtonsAndLabels" method="_on_Quit_pressed"]
+[connection signal="timeout" from="MenuButtonsAndLabels/SandBox" to="MenuButtonsAndLabels" method="_on_SandBox_timeout"]
+[connection signal="timeout" from="MenuButtonsAndLabels/SplitScreen" to="MenuButtonsAndLabels" method="_on_SplitScreen_timeout"]

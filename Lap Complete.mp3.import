@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Lap Complete.mp3-707795c03eacd67fe61bb557f54190ad.mp3str"
+
+[deps]
+
+source_file="res://Lap Complete.mp3"
+dest_files=[ "res://.import/Lap Complete.mp3-707795c03eacd67fe61bb557f54190ad.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

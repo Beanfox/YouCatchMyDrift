@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Snowy Mountains.mp3-b9fa8dba30474c8549d856674963dbd7.mp3str"
+
+[deps]
+
+source_file="res://Snowy Mountains.mp3"
+dest_files=[ "res://.import/Snowy Mountains.mp3-b9fa8dba30474c8549d856674963dbd7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

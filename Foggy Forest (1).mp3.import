@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Foggy Forest (1).mp3-903d1ea918ad9e3516bd6410ab2e901e.mp3str"
+
+[deps]
+
+source_file="res://Foggy Forest (1).mp3"
+dest_files=[ "res://.import/Foggy Forest (1).mp3-903d1ea918ad9e3516bd6410ab2e901e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

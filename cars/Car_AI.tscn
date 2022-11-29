@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Other Crap/Smoke.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/kenney_car_kit/suv.glb" type="PackedScene" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+
+[sub_resource type="SpatialMaterial" id=9]
+
+[sub_resource type="SpatialMaterial" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+
+[sub_resource type="SpatialMaterial" id=7]
+
+[sub_resource type="SpatialMaterial" id=8]
+
+[node name="Car_AI" type="Spatial"]
+
+[node name="Car_Ai_Mesh" parent="." instance=ExtResource( 3 )]
+
+[node name="body" parent="Car_Ai_Mesh/tmpParent/suv" index="0"]
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+material/4 = SubResource( 9 )
+
+[node name="wheel_back" parent="Car_Ai_Mesh/tmpParent/suv/body" index="0"]
+material/0 = SubResource( 4 )
+
+[node name="wheel_backLeft" parent="Car_Ai_Mesh/tmpParent/suv" index="1"]
+material/0 = SubResource( 5 )
+
+[node name="wheel_backRight" parent="Car_Ai_Mesh/tmpParent/suv" index="2"]
+material/0 = SubResource( 6 )
+
+[node name="wheel_frontLeft" parent="Car_Ai_Mesh/tmpParent/suv" index="3"]
+material/0 = SubResource( 7 )
+
+[node name="wheel_frontRight" parent="Car_Ai_Mesh/tmpParent/suv" index="4"]
+material/0 = SubResource( 8 )
+
+[node name="Smoke" parent="Car_Ai_Mesh" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 0.55 )
+emitting = false
+
+[node name="Smoke2" parent="Car_Ai_Mesh" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0.55 )
+emitting = false
+
+[editable path="Car_Ai_Mesh"]
